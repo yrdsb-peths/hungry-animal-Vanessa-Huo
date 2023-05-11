@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public int score = 0;
+    Label scoreLabel;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,11 +20,12 @@ public class MyWorld extends World
         super(600, 400, 1);
         //Create a dolphin
         Dolphin dolphin = new Dolphin();
-        addObject(dolphin, 300, 200);
+        addObject(dolphin, 300, 300);
         //Create a apple
         createApple();
+        
         //Create label
-        Label scoreLabel = new Label(0,80);
+        scoreLabel = new Label(0,80);
         addObject(scoreLabel,50,50);
     }
     

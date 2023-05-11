@@ -2,10 +2,10 @@
 class.Apple.image=apple2.png
 class.Dolphin.image=dolphin.png
 dependency1.from=MyWorld
-dependency1.to=Dolphin
+dependency1.to=Label
 dependency1.type=UsesDependency
 dependency2.from=MyWorld
-dependency2.to=Label
+dependency2.to=Dolphin
 dependency2.type=UsesDependency
 dependency3.from=MyWorld
 dependency3.to=Apple

@@ -23,7 +23,7 @@ public class Dolphin extends Actor
             move(1);
         }
         
-        removeTouching(Apple.class);
+        eat();
     }
     
     public void eat()
@@ -33,6 +33,7 @@ public class Dolphin extends Actor
             removeTouching(Apple.class);
             MyWorld world = (MyWorld)getWorld();
             world.createApple();
+            world.increaseScore();
         }
     }
 }
