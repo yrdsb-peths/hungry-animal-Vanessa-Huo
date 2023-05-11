@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Dolphin here.
+ * Dolphin, the animal.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Vanessa) 
+ * @version (May 2023)
  */
 public class Dolphin extends Actor
 {
@@ -14,6 +14,25 @@ public class Dolphin extends Actor
      */
     public void act()
     {
-        move(3);
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-1);
+        }
+        else if(Greenfoot.isKeyDown("right"))
+        {
+            move(1);
+        }
+        
+        removeTouching(Apple.class);
+    }
+    
+    public void eat()
+    {
+        if(isTouching(Apple.class))
+        {
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld)getWorld();
+            world.createApple();
+        }
     }
 }
