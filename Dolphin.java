@@ -8,10 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Dolphin extends Actor
 {
+    
+    GreenfootImage[]tile=new GreenfootImage[6];
+    
+    public Dolphin()
+    {
+        for(int i=0;i<tile.length;i++)
+        {
+            tile[i]=new GreenfootImage("images/octopus/tile00"+i+".png");
+        }
+        setImage(tile[0]);
+    }
+    
+    
     /**
      * Act - do whatever the Dolphin wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
