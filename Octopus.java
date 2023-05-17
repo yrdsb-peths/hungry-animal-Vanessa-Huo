@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Vanessa) 
  * @version (May 2023)
  */
-public class Dolphin extends Actor
+public class Octopus extends Actor
 {
     
     GreenfootImage[]idleRight=new GreenfootImage[6];
@@ -15,7 +15,7 @@ public class Dolphin extends Actor
     
     String facing = "right";
     
-    public Dolphin()
+    public Octopus()
     {
         for(int i=0;i<idleRight.length;i++)
         {

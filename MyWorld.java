@@ -18,9 +18,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1,false);
-        //Create a dolphin
-        Dolphin dolphin = new Dolphin();
-        addObject(dolphin, 300, 300);
+        //Create a Octopus
+        Octopus octopus = new Octopus();
+        addObject(octopus, 300, 300);
         //Create a apple
         createApple();
         

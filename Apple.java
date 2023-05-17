@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Apple for dolphin.
+ * Apple for octopus.
  * 
  * @author (Vanessa) 
  * @version (May 2023)
