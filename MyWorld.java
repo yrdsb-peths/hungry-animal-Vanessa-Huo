@@ -25,7 +25,7 @@ public class MyWorld extends World
         createApple();
         
         //Create label
-        scoreLabel = new Label(0,80);
+        scoreLabel = new Label(0,70);
         addObject(scoreLabel,50,50);
     }
     
