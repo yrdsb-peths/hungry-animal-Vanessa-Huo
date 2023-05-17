@@ -20,7 +20,7 @@ public class Octopus extends Actor
         for(int i=0;i<idleRight.length;i++)
         {
             idleRight[i]=new GreenfootImage("images/octopus/tile00"+i+".png");
-            idleRight[i].scale(110,110);
+            idleRight[i].scale(90,90);
         }
         
         for(int i=0;i<idleLeft.length;i++)

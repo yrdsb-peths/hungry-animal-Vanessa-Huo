@@ -10,6 +10,7 @@ public class MyWorld extends World
 {
     public int score = 0;
     Label scoreLabel;
+    GreenfootImage bcImage = new GreenfootImage("images/Bc.jpeg");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -27,6 +28,9 @@ public class MyWorld extends World
         //Create label
         scoreLabel = new Label(0,70);
         addObject(scoreLabel,50,50);
+        
+        bcImage.scale(700,400);
+        setBackground(bcImage);
     }
     
     public void gameOver(){
