@@ -13,21 +13,39 @@ public class Fish extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int speed = 1;
-    GreenfootImage[]idleFish=new GreenfootImage[2];
+    GreenfootImage[]idleFish1=new GreenfootImage[2];
+    GreenfootImage[]idleFish2=new GreenfootImage[2];
+    GreenfootImage[]idleFish3=new GreenfootImage[2];
     SimpleTimer animationTimer = new SimpleTimer();
     
     public Fish(){
-        for(int i=0;i<idleFish.length;i++)
+        
+        //Change a type of fish when speed changes
+        for(int i=0;i<idleFish1.length;i++)
         {
-            idleFish[i]=new GreenfootImage("images/fish/0"+i+".png");
-            idleFish[i].scale(30,20);
+            idleFish1[i]=new GreenfootImage("images/fish/0"+i+".png");
+            idleFish1[i].scale(30,20);
+        }
+        
+        for(int i=0;i<idleFish2.length;i++)
+        {
+            idleFish2[i]=new GreenfootImage("images/fish/1"+i+".png");
+            idleFish2[i].scale(35,25);
+        }
+        
+        for(int i=0;i<idleFish3.length;i++)
+        {
+            idleFish3[i]=new GreenfootImage("images/fish/2"+i+".png");
+            idleFish3[i].scale(35,25);
         }
         
         //Reset the timer
         animationTimer.mark();
         
         //Initial octopus image
-        setImage(idleFish[0]);
+        setImage(idleFish1[0]);
+        
+
     }
     
     public void act()
@@ -42,7 +60,6 @@ public class Fish extends Actor
             world.removeObject(this);
         }
         
-        
         //Animate the octopus 
         animateFish();
     }
@@ -56,8 +73,19 @@ public class Fish extends Actor
         }
         animationTimer.mark();
         
-        setImage(idleFish[imageIndex]);
-        imageIndex=(imageIndex + 1) % idleFish.length;
+        if(speed==1){
+            setImage(idleFish1[imageIndex]);
+            imageIndex=(imageIndex + 1) % idleFish1.length;
+        }
+        else if(speed==2){
+            setImage(idleFish2[imageIndex]);
+            imageIndex=(imageIndex + 1) % idleFish2.length;
+        }
+        else{
+            setImage(idleFish3[imageIndex]);
+            imageIndex=(imageIndex + 1) % idleFish3.length;
+        }
+        
     }
     
     public void setSpeed(int spd)

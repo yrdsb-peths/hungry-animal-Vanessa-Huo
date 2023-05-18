@@ -56,7 +56,8 @@ public class MyWorld extends World
     public void createFish()
     {
         Fish fish = new Fish();
-        fish.setSpeed(level);
+        fish.setSpeed
+        (level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(fish, x, y);

@@ -28,7 +28,7 @@ public class Octopus extends Actor
         {
             idleLeft[i]=new GreenfootImage("images/octopus/tile00"+i+".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(100,100);
+            idleLeft[i].scale(90,90);
         }
         
         //Reset the timer
