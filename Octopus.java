@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Dolphin, the animal.
+ * Octopus, the animal.
  * 
  * @author (Vanessa) 
  * @version (May 2023)
@@ -40,7 +40,7 @@ public class Octopus extends Actor
     }
     
     int imageIndex=0;
-    public void animateDolphin()
+    public void animateOctopus()
     {
         if(animationTimer.millisElapsed()<200)
         {
@@ -61,7 +61,7 @@ public class Octopus extends Actor
     }
     
     /**
-     * Act - do whatever the Dolphin wants to do. This method is called whenever
+     * Act - do whatever the Octopus wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
@@ -78,21 +78,21 @@ public class Octopus extends Actor
             facing = "right";
         }
         
-        //Remove apple if octopus eats it
+        //Remove fish if octopus eats it
         eat();
         
         //Animate the octopus 
-        animateDolphin();
+        animateOctopus();
     }
     
-    //Eat the apple and spawn new apple if an apple is eaten 
+    //Eat the fish and spawn new fish if an fish is eaten 
     public void eat()
     {
-        if(isTouching(Apple.class))
+        if(isTouching(Fish.class))
         {
-            removeTouching(Apple.class);
+            removeTouching(Fish.class);
             MyWorld world = (MyWorld)getWorld();
-            world.createApple();
+            world.createFish();
             world.increaseScore();
         }
     }

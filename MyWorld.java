@@ -22,9 +22,9 @@ public class MyWorld extends World
         super(600, 400, 1,false);
         //Create a Octopus
         Octopus octopus = new Octopus();
-        addObject(octopus, 300, 300);
-        //Create a apple
-        createApple();
+        addObject(octopus, 300, 320);
+        //Create a Fish
+        createFish();
         
         //Create label
         scoreLabel = new Label(0,70);
@@ -52,14 +52,14 @@ public class MyWorld extends World
         }
     }
     
-    //Create new apple at random location at the top of the screen 
-    public void createApple()
+    //Create new fish at random location at the top of the screen 
+    public void createFish()
     {
-        Apple apple = new Apple();
-        apple.setSpeed(level);
+        Fish fish = new Fish();
+        fish.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
-        addObject(apple, x, y);
+        addObject(fish, x, y);
     }
 
 }
