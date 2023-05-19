@@ -22,6 +22,5 @@ public class Text extends Actor
     public Text(){
         titleWords.scale(600,400);
         setImage(titleWords);
-        
     }
 }

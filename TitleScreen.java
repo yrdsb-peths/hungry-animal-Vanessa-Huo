@@ -10,6 +10,7 @@ public class TitleScreen extends World
 {
     
     GreenfootImage bcImage = new GreenfootImage("images/Title.jpeg");
+    NewGame start = new NewGame();
     
     /**
      * Constructor for objects of class TitleScreen.
@@ -26,24 +27,22 @@ public class TitleScreen extends World
         Text title = new Text();
         addObject(title, getWidth()/2, 150);
         
+        addObject(start, getWidth()/2, 265);
+        
         prepare();
         
     }
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
-        {
-            MyWorld gameWorld = new MyWorld();
-            Greenfoot.setWorld(gameWorld);
-        }
+        
     }
     
     public void prepare(){
         Octopus octopus = new Octopus();
         addObject(octopus, 445, 130);
-        Label label = new Label("Press <space> to Start", 40);
-        addObject(label,getWidth()/2,265);
+        //Label label = new Label("Press <space> to Start", 40);
+        //addObject(label,getWidth()/2,265);
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,getWidth()/2,321);
         Fish fish = new Fish();
