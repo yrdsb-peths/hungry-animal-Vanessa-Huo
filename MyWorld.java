@@ -26,12 +26,16 @@ public class MyWorld extends World
         //Create a Fish
         createFish();
         
+        //Create a Garbage
+        createGarbage();
+
         //Create label
         scoreLabel = new Label(0,70);
         addObject(scoreLabel,50,50);
         
         bcImage.scale(700,400);
         setBackground(bcImage);
+        
     }
     
     //End the game and draw "game over"
@@ -56,11 +60,20 @@ public class MyWorld extends World
     public void createFish()
     {
         Fish fish = new Fish();
-        fish.setSpeed
-        (level);
+        fish.setSpeed(level);
         int x = Greenfoot.getRandomNumber(600);
         int y = 0;
         addObject(fish, x, y);
     }
-
+    
+    public void createGarbage()
+    {
+        //50% change of generating an garbage
+        if(0 == Greenfoot.getRandomNumber(2)){
+            Garbage garbage = new Garbage();
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 0;
+            addObject(garbage, x, y);
+        }
+    }
 }

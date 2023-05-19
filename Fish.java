@@ -60,7 +60,7 @@ public class Fish extends Actor
             world.removeObject(this);
         }
         
-        //Animate the octopus 
+        //Animate the fish 
         animateFish();
     }
     
