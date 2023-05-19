@@ -21,14 +21,14 @@ public class Octopus extends Actor
         for(int i=0;i<idleRight.length;i++)
         {
             idleRight[i]=new GreenfootImage("images/octopus/tile00"+i+".png");
-            idleRight[i].scale(90,90);
+            idleRight[i].scale(100,100);
         }
         
         for(int i=0;i<idleLeft.length;i++)
         {
             idleLeft[i]=new GreenfootImage("images/octopus/tile00"+i+".png");
             idleLeft[i].mirrorHorizontally();
-            idleLeft[i].scale(90,90);
+            idleLeft[i].scale(100,100);
         }
         
         //Reset the timer
@@ -81,19 +81,35 @@ public class Octopus extends Actor
         //Remove fish if octopus eats it
         eat();
         
+        //Eat garbage 
+        eatGarbage();
+        
         //Animate the octopus 
         animateOctopus();
     }
     
     //Eat the fish and spawn new fish if an fish is eaten 
+    int notTouching = 3;
     public void eat()
     {
         if(isTouching(Fish.class))
         {
-            removeTouching(Fish.class);
             MyWorld world = (MyWorld)getWorld();
+            removeTouching(Fish.class);
             world.createFish();
             world.increaseScore();
+        }
+    }
+    
+    public void eatGarbage(){
+        if(isTouching(Garbage.class))
+        {
+            MyWorld world = (MyWorld)getWorld();
+            removeTouching(Garbage.class);
+            world.removeLP();
+            if(world.getCount()<3){
+                world.createGarbage();
+            }
         }
     }
 }

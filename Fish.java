@@ -24,7 +24,7 @@ public class Fish extends Actor
         for(int i=0;i<idleFish1.length;i++)
         {
             idleFish1[i]=new GreenfootImage("images/fish/0"+i+".png");
-            idleFish1[i].scale(30,20);
+            idleFish1[i].scale(35,25);
         }
         
         for(int i=0;i<idleFish2.length;i++)
@@ -36,7 +36,7 @@ public class Fish extends Actor
         for(int i=0;i<idleFish3.length;i++)
         {
             idleFish3[i]=new GreenfootImage("images/fish/2"+i+".png");
-            idleFish3[i].scale(35,25);
+            idleFish3[i].scale(40,25);
         }
         
         //Reset the timer
@@ -56,8 +56,11 @@ public class Fish extends Actor
         MyWorld world = (MyWorld)getWorld();
         if(getY()>=world.getHeight())
         {
-            world.gameOver();
+            world.removeLP();
             world.removeObject(this);
+            if(world.getCount()<3){
+                world.createFish();
+            }
         }
         
         //Animate the fish 

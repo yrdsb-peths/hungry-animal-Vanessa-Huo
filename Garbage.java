@@ -31,6 +31,6 @@ public class Garbage extends Actor
     
     public Garbage(){
         setImage(garbage);
-        garbage.scale(40,30);
+        garbage.scale(40,35);
     }
 }

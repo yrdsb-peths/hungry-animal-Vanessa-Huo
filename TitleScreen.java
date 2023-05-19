@@ -45,8 +45,5 @@ public class TitleScreen extends World
         //addObject(label,getWidth()/2,265);
         Label label2 = new Label("Use \u2190 and \u2192 to Move", 40);
         addObject(label2,getWidth()/2,321);
-        Fish fish = new Fish();
-        addObject(fish,125,45);
-        removeObject(fish);
     }
 }
