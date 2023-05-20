@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Garbage here.
+ * Garbage, the contaminated waste that gets dumped into the ocean.
+ * Reduce LifePoints if gets eaten by marine life (octopus).
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Vanessa) 
+ * @version (May 2023)
  */
 public class Garbage extends Actor
 {
@@ -25,7 +26,6 @@ public class Garbage extends Actor
         if(getY()>=world.getHeight())
         {
             world.removeObject(this);
-            world.createGarbage();
         }
     }
     

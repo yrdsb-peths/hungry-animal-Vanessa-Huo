@@ -8,16 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    GreenfootImage bcImage = new GreenfootImage("images/Bc.jpeg");
+    GreenfootSound gameOverSound = new GreenfootSound("gameover.mp3");
+    GreenfootSound reduceLP = new GreenfootSound("lp-1.mp3");
+    
     public int score = 0;
     Label scoreLabel;
     Label scoring;
-    int level = 1;
-    GreenfootImage bcImage = new GreenfootImage("images/Bc.jpeg");
     
     LifePoints heart0;
     LifePoints heart1;
     LifePoints heart2;
-        
+    
+    int level = 1;
+    int spawnTimer;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -35,9 +39,6 @@ public class MyWorld extends World
         
         //Create a Fish
         createFish();
-        
-        //Create a Garbage
-        createGarbage(); 
 
         //Create score label
         scoring = new Label("Score: ",30);
@@ -45,14 +46,21 @@ public class MyWorld extends World
         scoreLabel = new Label(0,30);
         addObject(scoreLabel,100,20);
         
+        //Set background images
         bcImage.scale(700,400);
         setBackground(bcImage);
+    }
+    
+    public void act(){
+        createGarbage();
     }
     
     //End the game and draw "game over"
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel,300,200);
+        gameOverSound.setVolume(50);
+        gameOverSound.play();
     }
     
     //Increase score
@@ -61,6 +69,7 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
         
+        //Difficulty increases for every 5 fish eaten 
         if(score%5==0)
         {
             level += 1;
@@ -77,19 +86,25 @@ public class MyWorld extends World
         addObject(fish, x, y);
     }
     
+    /**
+     * Remove one LifePoints when missed a fish
+     * Called "game over" when no more LifePoints left
+     */
     int count = 0;
-    //Remove one Lifepoint when missed a fish
-    //Called "game over" when no more Lifepoint left
     public void removeLP()
     {
         if(count==0)
         {
             removeObject(heart0);
+            reduceLP.setVolume(50);
+            reduceLP.play();
             count++;
         }
         else if(count==1)
         {
             removeObject(heart1);
+            reduceLP.setVolume(50);
+            reduceLP.play();
             count++;
         }
         else
@@ -100,21 +115,27 @@ public class MyWorld extends World
         }
     }
     
+    //Get number of LifePoints/hearts left 
     public int getCount(){
         return count;
     }
     
+    //For every 5 second there's 50% change of generating an garbage
     public void createGarbage()
     {
-        //50% change of generating an garbage
-        if(0 == Greenfoot.getRandomNumber(2)){
-            Garbage garbage = new Garbage();
-            int x = Greenfoot.getRandomNumber(600);
-            int y = 0;
-            addObject(garbage, x, y);
+        if(++spawnTimer%300 == 0){
+            if(0 == Greenfoot.getRandomNumber(2)){
+                Garbage garbage = new Garbage();
+                int x = Greenfoot.getRandomNumber(600);
+                int y = 0;
+                addObject(garbage, x, y);
+            }
+            //Reset spawnTimer
+            spawnTimer=0;
         }
     }
     
+    //Create three LifePoints/hearts on the upper-right corner of the screen
     public void createLifePoints()
     {
         heart2 = new LifePoints();

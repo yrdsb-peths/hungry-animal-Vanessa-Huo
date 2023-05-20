@@ -1,8 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Fish for octopus.
- * 
+ * Fish for the octopus.
+ * There are three kinds of fish with different speed.
  * @author (Vanessa) 
  * @version (May 2023)
  */
@@ -53,11 +53,13 @@ public class Fish extends Actor
         //Fish fall downwards
         setLocation(getX(),getY()+speed);
         
+        //Reduce one LifePoint if a fish is missed
         MyWorld world = (MyWorld)getWorld();
         if(getY()>=world.getHeight())
         {
             world.removeLP();
             world.removeObject(this);
+            //Respawn one fish
             if(world.getCount()<3){
                 world.createFish();
             }
@@ -67,6 +69,9 @@ public class Fish extends Actor
         animateFish();
     }
     
+    /**
+     * Animate the fish
+     */
     int imageIndex=0;
     public void animateFish()
     {
@@ -88,7 +93,6 @@ public class Fish extends Actor
             setImage(idleFish3[imageIndex]);
             imageIndex=(imageIndex + 1) % idleFish3.length;
         }
-        
     }
     
     public void setSpeed(int spd)

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Octopus, the animal.
+ * Octopus, the main animal who eats fish but doesn't eat garbage.
  * 
  * @author (Vanessa) 
  * @version (May 2023)
@@ -12,6 +12,7 @@ public class Octopus extends Actor
     GreenfootImage[]idleRight=new GreenfootImage[6];
     GreenfootImage[]idleLeft=new GreenfootImage[6];
     SimpleTimer animationTimer = new SimpleTimer();
+    
     //Direction the octopus is facing 
     String facing = "right";
     
@@ -39,6 +40,9 @@ public class Octopus extends Actor
         
     }
     
+    /**
+     * Animate the octopus
+     */
     int imageIndex=0;
     public void animateOctopus()
     {
@@ -88,8 +92,7 @@ public class Octopus extends Actor
         animateOctopus();
     }
     
-    //Eat the fish and spawn new fish if an fish is eaten 
-    int notTouching = 3;
+    //Increase score and spawn new fish if an fish is eaten 
     public void eat()
     {
         if(isTouching(Fish.class))
@@ -101,15 +104,13 @@ public class Octopus extends Actor
         }
     }
     
+    //Reduce one LifePoint if an garbage is eaten 
     public void eatGarbage(){
         if(isTouching(Garbage.class))
         {
             MyWorld world = (MyWorld)getWorld();
             removeTouching(Garbage.class);
             world.removeLP();
-            if(world.getCount()<3){
-                world.createGarbage();
-            }
         }
     }
 }
