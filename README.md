@@ -2,7 +2,7 @@
 Hungry Octopus is a Greenfoot game project developed by Vanessa Huo in May 2023 using Java. 
 
 ## Description 
-The players uses **&#8592;** and **&#8594;** to control the *Octopus* to eat more falling *Fish*. The more *Fish* the *Octopus* eats, the higher the player's score will be! The *Octopus* has a three *Lifepoints*, eating *Garbage* or missing a *Fish* will reduce one *Lifepoint*! :( Happy gaming and AIM FOR HIGHER SCORE!
+The players uses **&#8592;** and **&#8594;** to control the *Octopus* to eat more falling *Fish*. The more *Fish* the *Octopus* eats, the higher the player's score will be! The *Octopus* has three *Lifepoints*, eating *Garbage* or missing a *Fish* will reduce one *Lifepoint*! :( Happy gaming and AIM FOR HIGHER SCORE!
 
 ## Get Started 
 1. Download [Greenfoot](https://www.greenfoot.org/download)
@@ -12,11 +12,11 @@ The players uses **&#8592;** and **&#8594;** to control the *Octopus* to eat mor
     $ git clone https://github.com/yrdsb-peths/hungry-animal-Vanessa-Huo.git
     ```
 4. Use the Greenfoot to run the file `project.greenfoot`
-5. Click Run to play the game!
+5. Click `Run` to play the game!
 
 ## Features
 - An Octopus has three *Lifepoints*
-- For evert five second, there's 50% chance of generating a *Garbage*
+- For every five second, there's 50% chance of generating a *Garbage*
 - There are three types of *Fish* with different speed level
   - Blue fish: Level 1, Speed = 1
   - Green fish: Lvel 2, Speed = 2
