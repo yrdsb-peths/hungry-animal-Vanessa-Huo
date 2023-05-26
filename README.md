@@ -19,7 +19,7 @@ The players uses **&#8592;** and **&#8594;** to control the *Octopus* to eat mor
 - For every five second, there's 50% chance of generating a *Garbage*
 - There are three types of *Fish* with different speed level
   - Blue fish: Level 1, Speed = 1
-  - Green fish: Lvel 2, Speed = 2
+  - Green fish: Level 2, Speed = 2
   - Brown fish: Level 3+, Speed &#8805; 3
 
 ## Credits
