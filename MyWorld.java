@@ -59,7 +59,7 @@ public class MyWorld extends World
     public void gameOver(){
         Label gameOverLabel = new Label("Game Over", 100);
         addObject(gameOverLabel,300,200);
-        gameOverSound.setVolume(50);
+        gameOverSound.setVolume(30);
         gameOverSound.play();
     }
     
@@ -96,14 +96,14 @@ public class MyWorld extends World
         if(count==0)
         {
             removeObject(heart0);
-            reduceLP.setVolume(50);
+            reduceLP.setVolume(30);
             reduceLP.play();
             count++;
         }
         else if(count==1)
         {
             removeObject(heart1);
-            reduceLP.setVolume(50);
+            reduceLP.setVolume(30);
             reduceLP.play();
             count++;
         }
