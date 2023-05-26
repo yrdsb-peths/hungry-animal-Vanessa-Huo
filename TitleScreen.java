@@ -33,11 +33,6 @@ public class TitleScreen extends World
         
     }
     
-    public void act()
-    {
-        
-    }
-    
     public void prepare(){
         Octopus octopus = new Octopus();
         addObject(octopus, 445, 130);

@@ -63,7 +63,9 @@ public class MyWorld extends World
         gameOverSound.play();
     }
     
-    //Increase score
+    /**
+     * Increase score by 1
+     */
     public void increaseScore()
     {
         score++;
